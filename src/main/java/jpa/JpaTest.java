@@ -17,6 +17,12 @@ public class JpaTest {
 
 
 		try {
+			Fiche fiche1 = new Fiche();
+			Fiche fiche2 = new Fiche();
+			fiche1.setLibelle("Analyser");
+			manager.persist(fiche1);
+			fiche2.setLibelle("Analyser2");
+			manager.persist(fiche2);
 
 		} catch (Exception e) {
 			e.printStackTrace();
