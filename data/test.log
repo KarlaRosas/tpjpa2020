@@ -20,3 +20,136 @@ INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
 ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 7
 COMMIT
 DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+drop table if exists Department CASCADE 
+drop table if exists Employee CASCADE 
+drop table if exists Fiche CASCADE 
+drop table if exists Tableau CASCADE 
+drop table if exists Utilisateur CASCADE 
+drop table if exists Utilisateur_Tableau CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Department (id bigint not null, name varchar(255), primary key (id))
+create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
+create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Tableau (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
+alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
+alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
+alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
+alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
+INSERT INTO TABLEAU VALUES(1,'tab1')
+INSERT INTO TABLEAU VALUES(2,'tab2')
+INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
+INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
+INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
+INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 7
+COMMIT
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+drop table if exists Department CASCADE 
+drop table if exists Employee CASCADE 
+drop table if exists Fiche CASCADE 
+drop table if exists Tableau CASCADE 
+drop table if exists Utilisateur CASCADE 
+drop table if exists Utilisateur_Tableau CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Department (id bigint not null, name varchar(255), primary key (id))
+create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
+create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Tableau (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
+alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
+alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
+alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
+alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
+INSERT INTO TABLEAU VALUES(1,'tab1')
+INSERT INTO TABLEAU VALUES(2,'tab2')
+INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
+INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
+INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
+INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
+INSERT INTO UTILISATEUR VALUES(7,'user1')
+INSERT INTO UTILISATEUR VALUES(8,'user2')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 9
+COMMIT
+DISCONNECT
+/*C8*/SET SCHEMA PUBLIC
+drop table if exists Department CASCADE 
+drop table if exists Employee CASCADE 
+drop table if exists Fiche CASCADE 
+drop table if exists Section CASCADE 
+drop table if exists Tableau CASCADE 
+drop table if exists Utilisateur CASCADE 
+drop table if exists Utilisateur_Tableau CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Department (id bigint not null, name varchar(255), primary key (id))
+create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
+create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Tableau (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
+alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
+alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
+alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
+alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
+alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
+INSERT INTO TABLEAU VALUES(1,'tab1')
+INSERT INTO TABLEAU VALUES(2,'tab2')
+INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
+INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
+INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
+INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
+INSERT INTO UTILISATEUR VALUES(7,'user1')
+INSERT INTO UTILISATEUR VALUES(8,'user2')
+INSERT INTO SECTION VALUES(9,'section1',1)
+INSERT INTO SECTION VALUES(10,'section2',2)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
+COMMIT
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C10*/SET SCHEMA PUBLIC
+drop table if exists Department CASCADE 
+drop table if exists Employee CASCADE 
+drop table if exists Fiche CASCADE 
+drop table if exists Section CASCADE 
+drop table if exists Tableau CASCADE 
+drop table if exists Tars CASCADE 
+drop table if exists Utilisateur CASCADE 
+drop table if exists Utilisateur_Tableau CASCADE 
+drop sequence hibernate_sequence if exists
+create sequence hibernate_sequence start with 1 increment by 1
+create table Department (id bigint not null, name varchar(255), primary key (id))
+create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
+create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Section (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Tableau (id bigint not null, name varchar(255), primary key (id))
+create table Tars (id bigint not null, name varchar(255), fiche_id bigint, primary key (id))
+create table Utilisateur (id bigint not null, name varchar(255), primary key (id))
+create table Utilisateur_Tableau (utilisateurs_id bigint not null, tableaux_id bigint not null)
+alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
+alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
+alter table Section add constraint FKeunrr6291jbnsrl4djcof0aug foreign key (tableau_id) references Tableau
+alter table Tars add constraint FKctiu8oms4g0ptaaq019lcgry2 foreign key (fiche_id) references Fiche
+alter table Utilisateur_Tableau add constraint FKdugn86fqt3hmjdruu1pwq3s7w foreign key (tableaux_id) references Tableau
+alter table Utilisateur_Tableau add constraint FKn771q26ixhx25vl0twfdqik6l foreign key (utilisateurs_id) references Utilisateur
+INSERT INTO TABLEAU VALUES(1,'tab1')
+INSERT INTO TABLEAU VALUES(2,'tab2')
+INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
+INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
+INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
+INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
+INSERT INTO UTILISATEUR VALUES(7,'user1')
+INSERT INTO UTILISATEUR VALUES(8,'user2')
+INSERT INTO SECTION VALUES(9,'section1',1)
+INSERT INTO SECTION VALUES(10,'section2',2)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
+COMMIT
+DISCONNECT

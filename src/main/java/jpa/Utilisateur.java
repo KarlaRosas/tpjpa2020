@@ -1,4 +1,4 @@
-/**Employee**/
+/**Utilisateur**/
 package jpa;
 
 import javax.persistence.Entity;
@@ -9,24 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Fiche {
+public class Utilisateur {
     private Long id;
 
     private String name;
 
     private Tableau tableau;
 
-    private List<Tars> tars = new ArrayList<Tars>();
+    private List<Tableau> tableaux = new ArrayList<Tableau>();
 
-    public Fiche() {
+    public Utilisateur() {
     }
 
-    public Fiche(String name, Tableau tableau) {
+    public Utilisateur(String name, Tableau tableau) {
         this.name = name;
         this.tableau = tableau;
     }
 
-    public Fiche(String name) {
+    public Utilisateur(String name) {
         this.name = name;
     }
 
@@ -48,27 +48,18 @@ public class Fiche {
         this.name = name;
     }
 
-    @ManyToOne
-    public Tableau getTableau() {
-        return tableau;
+    @ManyToMany
+    public List<Tableau> getTableaux() {
+        return tableaux;
     }
 
-    public void setTableau(Tableau tableau) {
-        this.tableau = tableau;
-    }
-
-    @OneToMany(mappedBy = "fiche", cascade = CascadeType.PERSIST)
-    public List<Tars> getTars() {
-        return tars;
-    }
-
-    public void setTars(List<Tars> tars) {
-        this.tars = tars;
+    public void setTableaux(List<Tableau> tableaux) {
+        this.tableaux = tableaux;
     }
 
     @Override
     public String toString() {
-        return "Fiche [id=" + id + ", name=" + name + ", tableau="
+        return "Utilisateur [id=" + id + ", name=" + name + ", tableau="
                 + tableau.getName() + "]";
     }
 

@@ -8,7 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Tableau {
@@ -18,6 +18,10 @@ public class Tableau {
     private String name;
 
     private List<Fiche> fiches = new ArrayList<Fiche>();
+
+    private List<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
+
+    private List<Section> sections = new ArrayList<Section>();
 
     public Tableau() {
         super();
@@ -53,5 +57,26 @@ public class Tableau {
     public void setFiches(List<Employee> employees) {
         this.fiches = fiches;
     }
+
+    @ManyToMany(mappedBy = "tableaux", cascade = CascadeType.PERSIST)
+    public List<Utilisateur> getUtilisateurs() {
+        return utilisateurs;
+    }
+
+    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+        this.utilisateurs = utilisateurs;
+    }
+
+    @OneToMany(mappedBy = "tableau", cascade = CascadeType.PERSIST)
+    public List<Section> getSections() {
+        return sections;
+    }
+
+    public void setSections(List<Section> sections) {
+        this.sections = sections;
+    }
+
 }
+
+
 

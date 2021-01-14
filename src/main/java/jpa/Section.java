@@ -1,4 +1,4 @@
-/**Employee**/
+/**Utilisateur**/
 package jpa;
 
 import javax.persistence.Entity;
@@ -9,24 +9,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Fiche {
+public class Section {
     private Long id;
 
     private String name;
 
     private Tableau tableau;
 
-    private List<Tars> tars = new ArrayList<Tars>();
-
-    public Fiche() {
+    public Section() {
     }
 
-    public Fiche(String name, Tableau tableau) {
+    public Section(String name, Tableau tableau) {
         this.name = name;
         this.tableau = tableau;
     }
 
-    public Fiche(String name) {
+    public Section(String name) {
         this.name = name;
     }
 
@@ -57,18 +55,9 @@ public class Fiche {
         this.tableau = tableau;
     }
 
-    @OneToMany(mappedBy = "fiche", cascade = CascadeType.PERSIST)
-    public List<Tars> getTars() {
-        return tars;
-    }
-
-    public void setTars(List<Tars> tars) {
-        this.tars = tars;
-    }
-
     @Override
     public String toString() {
-        return "Fiche [id=" + id + ", name=" + name + ", tableau="
+        return "Section [id=" + id + ", name=" + name + ", tableau="
                 + tableau.getName() + "]";
     }
 

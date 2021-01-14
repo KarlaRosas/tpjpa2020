@@ -57,6 +57,14 @@ public class JpaTestFiche {
             manager.persist(new Fiche("Captain Nemo",tableau));
             manager.persist(new Fiche("Bon Toronja",tableau2));
             manager.persist(new Fiche("Bebecito bebeLean",tableau2));
+            manager.persist(new Utilisateur("user1",tableau));
+            manager.persist(new Utilisateur("user2",tableau2));
+            manager.persist(new Section("section1",tableau));
+            manager.persist(new Section("section2",tableau2));
+            manager.persist(new Tars("tars1",tableau.getFiches().get(3)));
+
+
+
 
         }
     }
