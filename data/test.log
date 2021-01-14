@@ -1,17 +1,22 @@
-/*C70*/SET SCHEMA PUBLIC
+/*C4*/SET SCHEMA PUBLIC
 drop table if exists Department CASCADE 
 drop table if exists Employee CASCADE 
+drop table if exists Fiche CASCADE 
+drop table if exists Tableau CASCADE 
 drop sequence hibernate_sequence if exists
 create sequence hibernate_sequence start with 1 increment by 1
 create table Department (id bigint not null, name varchar(255), primary key (id))
 create table Employee (id bigint not null, name varchar(255), department_id bigint, primary key (id))
+create table Fiche (id bigint not null, name varchar(255), tableau_id bigint, primary key (id))
+create table Tableau (id bigint not null, name varchar(255), primary key (id))
 alter table Employee add constraint FK14tijxqry9ml17nk86sqfp561 foreign key (department_id) references Department
-INSERT INTO DEPARTMENT VALUES(1,'dep1')
-INSERT INTO DEPARTMENT VALUES(2,'dep2')
-INSERT INTO EMPLOYEE VALUES(3,'Jakab Gipsz',1)
-INSERT INTO EMPLOYEE VALUES(4,'Captain Nemo',1)
-INSERT INTO EMPLOYEE VALUES(5,'Bon Toronja',2)
-INSERT INTO EMPLOYEE VALUES(6,'Bebecito bebeLean',2)
+alter table Fiche add constraint FKo4cw80ehijpr33iwjqwntf2ri foreign key (tableau_id) references Tableau
+INSERT INTO TABLEAU VALUES(1,'tab1')
+INSERT INTO TABLEAU VALUES(2,'tab2')
+INSERT INTO FICHE VALUES(3,'Jakab Gipsz',1)
+INSERT INTO FICHE VALUES(4,'Captain Nemo',1)
+INSERT INTO FICHE VALUES(5,'Bon Toronja',2)
+INSERT INTO FICHE VALUES(6,'Bebecito bebeLean',2)
 ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 7
 COMMIT
 DISCONNECT
