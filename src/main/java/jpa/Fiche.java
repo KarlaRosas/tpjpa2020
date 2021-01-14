@@ -16,12 +16,15 @@ public class Fiche {
 
     private Section section;
 
+    private List<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
+
     private List<Tars> tars = new ArrayList<Tars>();
+
 
     public Fiche() {
     }
 
-    public Fiche(String name, Tableau tableau) {
+    public Fiche(String name, Section section) {
         this.name = name;
         this.section = section;
     }
@@ -67,11 +70,20 @@ public class Fiche {
         this.section = section;
     }
 
+    @ManyToMany(mappedBy = "fiches", cascade = CascadeType.PERSIST)
+    public List<Utilisateur> getUtilisateurs() {
+        return utilisateurs;
+    }
+
+    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+        this.utilisateurs = utilisateurs;
+    }
+
 
     @Override
     public String toString() {
         return "Fiche [id=" + id + ", name=" + name + ", section="
-                + section.getName() + "]";
+                + "]";
     }
 
 }

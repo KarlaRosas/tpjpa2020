@@ -14,16 +14,14 @@ public class Utilisateur {
 
     private String name;
 
-    private Tableau tableau;
+   private List<Fiche> fiches = new ArrayList<Fiche>();
 
-    private List<Tableau> tableaux = new ArrayList<Tableau>();
 
     public Utilisateur() {
     }
 
-    public Utilisateur(String name, Tableau tableau) {
+    public Utilisateur(String name, Fiche fiche) {
         this.name = name;
-        this.tableau = tableau;
     }
 
     public Utilisateur(String name) {
@@ -49,18 +47,18 @@ public class Utilisateur {
     }
 
     @ManyToMany
-    public List<Tableau> getTableaux() {
-        return tableaux;
+    public List<Fiche> getFiches() {
+        return fiches;
     }
 
-    public void setTableaux(List<Tableau> tableaux) {
-        this.tableaux = tableaux;
+    public void setFiches(List<Fiche> fiches) {
+        this.fiches = fiches;
     }
 
     @Override
     public String toString() {
         return "Utilisateur [id=" + id + ", name=" + name + ", tableau="
-                + tableau.getName() + "]";
+                + fiches.get(0).getName() + "]";
     }
 
 }

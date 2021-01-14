@@ -1,4 +1,5 @@
 package jpa;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -50,15 +51,23 @@ public class JpaTestFiche {
         if (numOfFiches == 0) {
             Tableau tableau = new Tableau("tab1");
             Tableau tableau2 = new Tableau("tab2");
+            Section section = new Section("section");
+            //List<Fiche> fiches = new ArrayList<Fiche>();
+            Fiche fiche = new Fiche("fiche1",section);
+            Fiche fiche2 = new Fiche("fiche2",section);
+            //fiches.add(fiche2);
             manager.persist(tableau);
             manager.persist(tableau2);
+            manager.persist(fiche);
+            manager.persist(fiche2);
+            manager.persist(section);
 
-            manager.persist(new Fiche("Jakab Gipsz",tableau));
-            manager.persist(new Fiche("Captain Nemo",tableau));
-            manager.persist(new Fiche("Bon Toronja",tableau2));
-            manager.persist(new Fiche("Bebecito bebeLean",tableau2));
-            manager.persist(new Utilisateur("user1",tableau));
-            manager.persist(new Utilisateur("user2",tableau2));
+            manager.persist(new Fiche("Jakab Gipsz",section));
+            manager.persist(new Fiche("Captain Nemo",section));
+            manager.persist(new Fiche("Bon Toronja",section));
+            manager.persist(new Fiche("Bebecito bebeLean",section));
+           // manager.persist(new Utilisateur("user1",fiche));
+           // manager.persist(new Utilisateur("user2",fiche2));
             manager.persist(new Section("section1",tableau));
             manager.persist(new Section("section2",tableau2));
 
