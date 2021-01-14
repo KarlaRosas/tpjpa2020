@@ -55,7 +55,7 @@ public class JpaTest {
 
 			manager.persist(new Employee("Jakab Gipsz",department));
 			manager.persist(new Employee("Captain Nemo",department));
-			manager.persist(new Employee("Bon esponja",department2));
+			manager.persist(new Employee("Bon Toronja",department2));
 			manager.persist(new Employee("Bebecito bebeLean",department2));
 
 		}
@@ -69,4 +69,5 @@ public class JpaTest {
 		}
 	}
 }
+
 
