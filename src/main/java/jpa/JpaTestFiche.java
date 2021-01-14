@@ -66,10 +66,13 @@ public class JpaTestFiche {
             manager.persist(new Fiche("Captain Nemo",section));
             manager.persist(new Fiche("Bon Toronja",section));
             manager.persist(new Fiche("Bebecito bebeLean",section));
-           // manager.persist(new Utilisateur("user1",fiche));
-           // manager.persist(new Utilisateur("user2",fiche2));
+            manager.persist(new Utilisateur("user1",fiche));
+            manager.persist(new Utilisateur("user2",fiche2));
             manager.persist(new Section("section1",tableau));
             manager.persist(new Section("section2",tableau2));
+            manager.persist(new Tars("tars1", fiche));
+            manager.persist(new Tars("tars2", fiche2));
+
 
 
 

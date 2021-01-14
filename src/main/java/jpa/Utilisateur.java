@@ -22,6 +22,7 @@ public class Utilisateur {
 
     public Utilisateur(String name, Fiche fiche) {
         this.name = name;
+        this.fiches.add(fiche);
     }
 
     public Utilisateur(String name) {
