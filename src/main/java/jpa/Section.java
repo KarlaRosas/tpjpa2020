@@ -1,4 +1,4 @@
-/**Utilisateur**/
+/**Section**/
 package jpa;
 
 import javax.persistence.Entity;
@@ -15,6 +15,8 @@ public class Section {
     private String name;
 
     private Tableau tableau;
+
+    private List<Fiche> fiches = new ArrayList<Fiche>();
 
     public Section() {
     }
@@ -54,6 +56,17 @@ public class Section {
     public void setTableau(Tableau tableau) {
         this.tableau = tableau;
     }
+
+    @OneToMany(mappedBy = "section", cascade = CascadeType.PERSIST)
+    public List<Fiche> getFiches() {
+        return fiches;
+    }
+
+    public void setFiches(List<Fiche> fiches) {
+        this.fiches = fiches;
+    }
+
+
 
     @Override
     public String toString() {

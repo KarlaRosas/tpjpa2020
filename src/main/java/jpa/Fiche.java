@@ -14,7 +14,7 @@ public class Fiche {
 
     private String name;
 
-    private Tableau tableau;
+    private Section section;
 
     private List<Tars> tars = new ArrayList<Tars>();
 
@@ -23,7 +23,7 @@ public class Fiche {
 
     public Fiche(String name, Tableau tableau) {
         this.name = name;
-        this.tableau = tableau;
+        this.section = section;
     }
 
     public Fiche(String name) {
@@ -48,14 +48,6 @@ public class Fiche {
         this.name = name;
     }
 
-    @ManyToOne
-    public Tableau getTableau() {
-        return tableau;
-    }
-
-    public void setTableau(Tableau tableau) {
-        this.tableau = tableau;
-    }
 
     @OneToMany(mappedBy = "fiche", cascade = CascadeType.PERSIST)
     public List<Tars> getTars() {
@@ -66,10 +58,20 @@ public class Fiche {
         this.tars = tars;
     }
 
+    @ManyToOne
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
+    }
+
+
     @Override
     public String toString() {
-        return "Fiche [id=" + id + ", name=" + name + ", tableau="
-                + tableau.getName() + "]";
+        return "Fiche [id=" + id + ", name=" + name + ", section="
+                + section.getName() + "]";
     }
 
 }

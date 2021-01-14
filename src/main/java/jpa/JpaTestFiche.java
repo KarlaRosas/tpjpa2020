@@ -61,7 +61,7 @@ public class JpaTestFiche {
             manager.persist(new Utilisateur("user2",tableau2));
             manager.persist(new Section("section1",tableau));
             manager.persist(new Section("section2",tableau2));
-            manager.persist(new Tars("tars1",tableau.getFiches().get(3)));
+
 
 
 

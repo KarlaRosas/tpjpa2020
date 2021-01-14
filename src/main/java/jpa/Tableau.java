@@ -17,10 +17,6 @@ public class Tableau {
 
     private String name;
 
-    private List<Fiche> fiches = new ArrayList<Fiche>();
-
-    private List<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
-
     private List<Section> sections = new ArrayList<Section>();
 
     public Tableau() {
@@ -47,24 +43,6 @@ public class Tableau {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @OneToMany(mappedBy = "tableau", cascade = CascadeType.PERSIST)
-    public List<Fiche> getFiches() {
-        return fiches;
-    }
-
-    public void setFiches(List<Employee> employees) {
-        this.fiches = fiches;
-    }
-
-    @ManyToMany(mappedBy = "tableaux", cascade = CascadeType.PERSIST)
-    public List<Utilisateur> getUtilisateurs() {
-        return utilisateurs;
-    }
-
-    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
-        this.utilisateurs = utilisateurs;
     }
 
     @OneToMany(mappedBy = "tableau", cascade = CascadeType.PERSIST)
