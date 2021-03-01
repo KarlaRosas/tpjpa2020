@@ -1,5 +1,5 @@
 /**Employee**/
-package jpa;
+package domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+
+@NamedQueries(
+        {
+                @NamedQuery(name= "touslesfiches",
+                        query = "select mag from Fiche as mag"),
+
+        }
+)
+
+
+
+
 public class Fiche {
     private Long id;
 
